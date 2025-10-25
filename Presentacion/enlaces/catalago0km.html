@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Catálogo de Autos</title>
   <link rel="stylesheet" href="../style.css">
+  <link rel="shortcut icon" href="../img/LogoCon.png" type="image/x-icon">
 </head>
 <body>
   <header class="header">
@@ -25,8 +26,8 @@
       </ul>
     </nav>
   </header>
-
-  <main class="main-content">
+<br>
+  <main class="main-content"> 
     <aside class="filtros">
       <h2>Filtrar</h2>
       <div class="filtro-box">
@@ -57,7 +58,7 @@
   <div class="footer__container">
     <!-- Columna 1: Logo -->
     <div class="footer__logo">
-      <img src="img/LogoCon.png" alt="Premium Quality">
+      <img src="../img/LogoCon.png" alt="Premium Quality">
       <p>La evolución de la movilidad.</p>
     </div>
 
@@ -93,6 +94,51 @@
 <a href="#contacto" class="btn-contacto" title="Ir a Contacto">
   ✉
 </a>
+
+<style>
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 20px;
+  padding-top: 100px; /* 👈 ajusta al alto real de tu header */
+}
+
+
+.filtros {
+  flex: 0 0 250px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: fit-content;
+  margin: 0; /* 🔹 asegura que no baje más de lo necesario */
+}
+
+.catalogo {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 0;  /* 🔹 elimina espacio innecesario arriba */
+  padding: 0;
+}
+.catalogo h2, 
+.catalogo p {
+  margin-top: 0;
+}
+.catalogo {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+
+  max-width: 1200px;   /* ancho máximo del grid */
+  margin: 0 auto;      /* centra el grid */
+}
+
+
+</style>
 
   <script>
     let autos = [];

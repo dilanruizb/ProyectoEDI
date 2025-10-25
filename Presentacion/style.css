@@ -1167,3 +1167,94 @@ button.btn.ver-mas:hover {
   transform: scale(1.1);
   color: #000;
 }
+/* Botón flotante */
+.btn-contacto {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  font-size: 22px;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* Ventana de chat oculta por defecto */
+.chat-form {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  display: none; /* Se muestra al abrir */
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.chat-header {
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-body {
+  padding: 15px;
+}
+
+.chat-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-body input,
+.chat-body textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.btn-enviar {
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-enviar:hover {
+  background: #333;
+}
+
+.close-chat {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
+}
+.chat-form {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1001;
+}
