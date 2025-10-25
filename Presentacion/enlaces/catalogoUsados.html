@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Autos Usados</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo-container">
+      <a href="../index.html">
+        <img class="header__logo" src="../img/LogoCon.png" alt="Logo Premium Quality">
+      </a>
+      <a href="../index.html"><h1 class="header__title">Premium Quality</h1></a>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="../enlaces/catalago0km.html">Catologo 0KM</a></li>
+        <li class="header__nav-item"><a href="../enlaces/catalogoUsados.html">Catologo Usados</a></li>
+        <li class="header__nav-item"><a href="../enlaces/catalogoTodos.html">Catologo general</a></li>
+        <li class="header__nav-item"><a href="../enlaces/catalogoAccesorios.html">Accesorios</a></li>
+        <li class="header__nav-item"><a href="../enlaces/finanzamiento.html">Finanzamiento</a></li>
+        <li class="header__nav-item"><a href="../enlaces/cargarAutos.html">Cargar autos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <aside class="filtros">
+      <h2>Filtrar</h2>
+      <div class="filtro-box">
+        <label for="marca">Marca:</label>
+        <select id="marca">
+          <option value="todos">Todos</option>
+        </select>
+      </div>
+      <div class="filtro-box">
+        <label for="precio">Precio máximo:</label>
+        <input type="range" id="precio" min="0" max="200000000" step="100000" value="5000000">
+        <span id="precio-valor">$5.000.000</span>
+      </div>
+    </aside>
+
+    <section class="catalogo" id="catalogo"></section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+ <footer class="footer">
+  <div class="footer__container">
+    <!-- Columna 1: Logo -->
+    <div class="footer__logo">
+      <img src="img/LogoCon.png" alt="Premium Quality">
+      <p>La evolución de la movilidad.</p>
+    </div>
+
+    <!-- Columna 2: Vehículos -->
+    <div class="footer__col">
+      <h4>Vehículos</h4>
+      <ul>
+        <li><a href="/Presentacion/enlaces/catalago0km.html">0 KM</a></li>
+        <li><a href="/Presentacion/enlaces/catalogoUsados.html">Usados</a></li>
+        <li><a href="/Presentacion/enlaces/catalogoTodos.html">Todos</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Servicios -->
+    <div class="footer__col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="../enlaces/catalogoAccesorios.html">Acessorios</a></li>
+        <li><a href="../enlaces/finanzamiento.html">Financiamiento</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="footer__bottom">
+    <p>© 2025 Premium Quality. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!--  Botón flotante de contacto -->
+<a href="#contacto" class="btn-contacto" title="Ir a Contacto">
+  ✉
+</a>
+
+  <script>
+    let autos = [];
+    const catalogo = document.getElementById("catalogo");
+    const marcaSelect = document.getElementById("marca");
+    const precioInput = document.getElementById("precio");
+    const precioValor = document.getElementById("precio-valor");
+
+    // Cargar autos usados
+    fetch("autosUsados.json")
+      .then(res => res.json())
+      .then(data => {
+        autos = data.map(a => ({ ...a, precio: Number(a.precio) || 0 }));
+        llenarMarcas(autos);
+        mostrarAutos(autos);
+      })
+      .catch(err => console.error("Error cargando autosUsados.json:", err));
+
+    function llenarMarcas(lista) {
+      marcaSelect.innerHTML = `<option value="todos">Todos</option>`;
+      const marcas = [...new Set(lista.map(a => a.marca))].sort((a, b) => a.localeCompare(b));
+      marcas.forEach(m => {
+        const op = document.createElement("option");
+        op.value = m;
+        op.textContent = m;
+        marcaSelect.appendChild(op);
+      });
+    }
+
+    function mostrarAutos(lista) {
+      catalogo.innerHTML = "";
+      if (!lista.length) {
+        catalogo.innerHTML = "<p>No se encontraron autos con estos filtros</p>";
+        return;
+      }
+      lista.forEach((auto, index) => {
+        catalogo.innerHTML += `
+          <div class="card">
+            <img src="${auto.img}" alt="${auto.modelo}" class="car-image">
+            <h3>${auto.marca} ${auto.modelo}</h3>
+            <p>${auto.desc}</p>
+            <div class="precio">$${auto.precio.toLocaleString()}</div>
+            <button class="btn ver-mas" data-index="${index}">VER MÁS</button>
+          </div>`;
+      });
+
+      document.querySelectorAll(".ver-mas").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          const i = Number(e.currentTarget.dataset.index);
+          mostrarModal(lista[i]);
+        });
+      });
+    }
+
+    function aplicarFiltros() {
+      const marca = marcaSelect.value;
+      const precioMax = Number(precioInput.value) || Infinity;
+      const filtrados = autos.filter(a =>
+        (marca === "todos" || a.marca === marca) && a.precio <= precioMax
+      );
+      mostrarAutos(filtrados);
+    }
+
+    marcaSelect.addEventListener("change", aplicarFiltros);
+    precioInput.addEventListener("input", () => {
+      precioValor.textContent = `$${Number(precioInput.value).toLocaleString()}`;
+      aplicarFiltros();
+    });
+
+    function mostrarModal(auto) {
+      const modal = document.getElementById("modal");
+      const body = document.getElementById("modal-body");
+      body.innerHTML = `
+        <h2>${auto.marca} ${auto.modelo}</h2>
+        <img src="${auto.img}" alt="${auto.modelo}">
+        <p>${auto.desc}</p>
+        <h3>Precio: $${auto.precio.toLocaleString()}</h3>`;
+      modal.style.display = "flex";
+    }
+
+    document.getElementById("closeModal").addEventListener("click", () => {
+      document.getElementById("modal").style.display = "none";
+    });
+    window.addEventListener("click", (e) => {
+      if (e.target.id === "modal") {
+        document.getElementById("modal").style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

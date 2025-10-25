@@ -1,0 +1,346 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'montserrat';
+    background-color: #ddd;
+    color:#f7efd8;
+}
+
+div,ul,nav,header,footer,a,li,label,input,body{
+    margin: 0;
+    padding: 0;
+}
+
+/*---HEADER SECTION---*/
+
+.contenidoooo{
+    position:fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    z-index: 1000
+}
+.header{
+    background-color: #252525;
+    display: flex;
+    justify-content: space-between; /* separa logo de menú */
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.header__open-nav-button{
+    color: #c8c8a9;
+    font-size: 3rem;
+    font-weight: 600;
+    position: fixed;
+    right: 10px;
+}
+
+.header__checkbox{
+    display: flex;
+}
+
+.header__nav{
+    position: relative;
+    z-index: 100;
+}
+
+.header__nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.header__logo{
+    max-width: 100%;
+    width: 64px;
+    margin: 10px 20px;
+}
+.header__logo-container{
+    display: flex;
+}
+
+.header__nav-item{
+    list-style: none;
+}
+
+.header__nav-item a{
+    color: #c8c8a9;
+    text-decoration: none;
+}
+
+
+.header__logo-container a{
+    display: flex ;
+    color: #c8c8a9;
+    text-decoration: none;
+}
+
+.header__nav-item :is(:hover,:active){
+    text-decoration: underline;
+}
+
+
+
+/*section*/
+
+.section-filtros{
+    display: flex;
+    background-color: #dddddd;
+    height: 100%;
+    width: 30%;
+    border: 1px solid #000;
+    padding: 30px;
+    padding-top: 300px;
+    color: #3d3d3d;
+    
+}
+.filtros {
+    width: 100% ;
+    height: 70%;
+    background-color: #a5a5a5;
+    padding: 100px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.filtros h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.filtro-box {
+    margin-bottom: 70px;
+}
+
+.filtro-box label {
+    display: block;
+    margin-bottom: 1.9em;
+    font-weight: bold;
+}
+
+.filtro-box select,
+.filtro-box input[type="range"] {
+    width: 100%;
+}
+
+.section-catalogo{
+    display: flex;
+    padding-top: 200px;
+    width: 100%;
+    height: 100%;
+    background-color: #854949;
+
+}
+/*---FOOTER SECTION---*/
+
+footer{
+    padding: 30px;
+    text-align: center;
+    background-color: #252525;
+    color: #fff;
+    font-size: 22px;
+    width: 100%;
+}
+
+.catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f2f2f2;
+  color: #333;  /* 👈 texto oscuro para buena visibilidad */
+}
+
+.card {
+  background: #fff;
+  color: #333;  /* 👈 textos oscuros dentro de la card */
+}
+
+.precio {
+  color: #008000; /* verde para resaltar el precio */
+  font-weight: bold;
+}
+.filtros {
+  width: 250px;
+  background-color: #e6e6e6;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.filtro-box {
+  margin-bottom: 20px; /* antes tenías 70px */
+}
+.main-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.catalogo {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  color: #333;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  cursor: pointer;
+}
+/* Fondo del modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenido del modal */
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;   /* 👈 el modal nunca será más ancho que esto */
+  width: 90%;
+  text-align: center;
+  color: #333;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: aparecer 0.3s ease;
+}
+
+/* Imagen dentro del modal */
+.modal-content img {
+  max-width: 100%;   /* 👈 nunca más grande que el modal */
+  max-height: 300px; /* 👈 límite de altura para que no se coma toda la pantalla */
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Botón cerrar */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+.close:hover {
+  color: red;
+}
+.formulario-agregar {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  margin: 2rem auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #333;
+}
+
+.formulario-agregar h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.form-auto {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-auto label {
+  font-weight: bold;
+}
+
+.form-auto input {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-auto .btn {
+  background: #252525;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-auto .btn:hover {
+  background: #444;
+}

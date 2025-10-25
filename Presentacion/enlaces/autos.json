@@ -1,0 +1,86 @@
+[
+    {
+        "marca": "bmw",
+        "modelo": "dsadsa",
+        "desc": "dsadas",
+        "precio": "321321321",
+        "img": "..\/img\/mercedesbenzC.png"
+    },
+    {
+        "marca": "toyota",
+        "modelo": "sw4",
+        "desc": "god",
+        "precio": "233232",
+        "img": "..\/img\/toyotasw4.png"
+    },
+    {
+        "marca": "test",
+        "modelo": "test",
+        "desc": "test",
+        "precio": "222222",
+        "img": "..\/img\/ecosport.png"
+    },
+    {
+        "marca": "test",
+        "modelo": "dsadsa",
+        "desc": "dsadsa",
+        "precio": 321321,
+        "img": "img\/auto_68fc551bc277a0.92705571.png"
+    },
+    {
+        "marca": "toyota",
+        "modelo": "sw4",
+        "desc": "god",
+        "precio": "233232",
+        "img": "..\/img\/toyotasw4.png"
+    },
+    {
+        "marca": "test",
+        "modelo": "test",
+        "desc": "test",
+        "precio": "222222",
+        "img": "..\/img\/ecosport.png"
+    },
+    {
+        "marca": "test",
+        "modelo": "dsadsa",
+        "desc": "dsadsa",
+        "precio": 321321,
+        "img": "img\/auto_68fc551bc277a0.92705571.png"
+    },
+    {
+        "marca": "toyota",
+        "modelo": "sw4",
+        "desc": "god",
+        "precio": "233232",
+        "img": "..\/img\/toyotasw4.png"
+    },
+    {
+        "marca": "test",
+        "modelo": "test",
+        "desc": "test",
+        "precio": "222222",
+        "img": "..\/img\/ecosport.png"
+    },
+    {
+        "marca": "test",
+        "modelo": "dsadsa",
+        "desc": "dsadsa",
+        "precio": 321321,
+        "img": "img\/auto_68fc551bc277a0.92705571.png"
+    },
+    {
+        "marca": "test",
+        "modelo": "dsadsa",
+        "desc": "dsaDSadsa",
+        "precio": 432432,
+        "img": "img\/auto_68fc5536199375.52395563.png"
+    },
+    {
+        "marca": "nuevaMarca",
+        "modelo": "BWM Serie x",
+        "desc": "test",
+        "precio": 323333,
+        "img": "img\/auto_68fc6f99dc5cb6.02438882.png"
+    }
+]

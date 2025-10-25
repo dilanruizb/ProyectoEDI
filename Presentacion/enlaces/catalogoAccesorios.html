@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Catálogo de Accesorios</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo-container">
+      <a href="../index.html">
+        <img class="header__logo" src="../img/LogoCon.png" alt="Logo Premium Quality">
+      </a>
+      <a href="../index.html"><h1 class="header__title">Premium Quality</h1></a>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="../enlaces/catalago0km.html">Catálogo 0KM</a></li>
+        <li class="header__nav-item"><a href="../enlaces/catalogoUsados.html">Catálogo Usados</a></li>
+        <li class="header__nav-item"><a href="../enlaces/catalogoTodos.html">Catálogo general</a></li>
+        <li class="header__nav-item"><a href="../enlaces/catalogoAccesorios.html">Accesorios</a></li>
+        <li class="header__nav-item"><a href="../enlaces/finanzamiento.html">Finanzamiento</a></li>
+        <li class="header__nav-item"><a href="../enlaces/cargarAccesorios.html">Cargar Accesorios</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-content"> 
+    <div class="catalogo-layout">
+      <!-- FILTROS -->
+      <aside class="filtros">
+        <h3>Filtros</h3>
+        <div class="form-group">
+          <label for="filtroMarca">Marca:</label>
+          <select id="filtroMarca">
+            <option value="">Todas</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="filtroTipo">Tipo:</label>
+          <select id="filtroTipo">
+            <option value="">Todos</option>
+            <option value="Interior">Interior</option>
+            <option value="Exterior">Exterior</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Seguridad">Seguridad</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- LISTADO -->
+      <section class="catalogo" id="listaAccesorios"></section>
+    </div>
+  </main>
+
+<footer class="footer">
+  <div class="footer__container">
+    <!-- Columna 1: Logo -->
+    <div class="footer__logo">
+      <img src="img/LogoCon.png" alt="Premium Quality">
+      <p>La evolución de la movilidad.</p>
+    </div>
+
+    <!-- Columna 2: Vehículos -->
+    <div class="footer__col">
+      <h4>Vehículos</h4>
+      <ul>
+        <li><a href="/Presentacion/enlaces/catalago0km.html">0 KM</a></li>
+        <li><a href="/Presentacion/enlaces/catalogoUsados.html">Usados</a></li>
+        <li><a href="/Presentacion/enlaces/catalogoTodos.html">Todos</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Servicios -->
+    <div class="footer__col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="../enlaces/catalogoAccesorios.html">Acessorios</a></li>
+        <li><a href="../enlaces/finanzamiento.html">Financiamiento</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="footer__bottom">
+    <p>© 2025 Premium Quality. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!--  Botón flotante de contacto -->
+<a href="#contacto" class="btn-contacto" title="Ir a Contacto">
+  ✉
+</a>
+
+  <script>
+  let accesorios = [];
+
+  function mostrarAccesorios(lista) {
+    const contenedor = document.getElementById("listaAccesorios");
+    contenedor.innerHTML = "";
+
+    lista.forEach(a => {
+      const card = document.createElement("div");
+      card.classList.add("card");
+
+      card.innerHTML = `
+        <img src="${a.img}" alt="${a.modelo}" class="car-image">
+        <h3>${a.modelo}</h3>
+        <p>${a.desc}</p>
+        <p><em>${a.tipo}</em></p>
+        <p><strong>$${Number(a.precio).toLocaleString()}</strong></p>
+        <button class="btn ver-mas">Ver más</button>
+      `;
+      contenedor.appendChild(card);
+    });
+  }
+
+  function cargarMarcas() {
+    const marcas = [...new Set(accesorios.map(a => a.marca))];
+    const select = document.getElementById("filtroMarca");
+    marcas.forEach(m => {
+      let opt = document.createElement("option");
+      opt.value = m;
+      opt.textContent = m;
+      select.appendChild(opt);
+    });
+  }
+
+  function filtrar() {
+    const marca = document.getElementById("filtroMarca").value;
+    const tipo = document.getElementById("filtroTipo").value;
+
+    let filtrados = accesorios;
+
+    if (marca) filtrados = filtrados.filter(a => a.marca === marca);
+    if (tipo) filtrados = filtrados.filter(a => a.tipo === tipo);
+
+    mostrarAccesorios(filtrados);
+  }
+
+  fetch('accesorios.json')
+  .then(res => res.json())
+  .then(data => {
+    accesorios = data;
+    cargarMarcas();
+    mostrarAccesorios(accesorios);
+  })
+  .catch(err => console.error("Error al cargar accesorios:", err));
+
+  document.getElementById("filtroMarca").addEventListener("change", filtrar);
+  document.getElementById("filtroTipo").addEventListener("change", filtrar);
+  </script>
+</body>
+</html>

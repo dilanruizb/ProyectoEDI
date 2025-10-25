@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Concesionaria - Premium Quality</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo-container">
+      <a href="index.html">
+        <img class="header__logo" src="img/LogoCon.png" alt="Logo Premium Quality">
+      </a>
+      <a href="index.html"><h1 class="header__title">Premium Quality</h1></a>
+    </div>
+    <nav class="header__nav">
+      <ul class="header__nav-list">
+        <li class="header__nav-item"><a href="../enlaces/catalago0km.html">Catologo 0KM</a></li>
+        <li class="header__nav-item"><a href="../enlaces/catalogoUsados.html">Catologo Usados</a></li>
+        <li class="header__nav-item"><a href="../enlaces/catalogoTodos.html">Catologo general</a></li>
+        <li class="header__nav-item"><a href="../enlaces/catalogoAccesorios.html">Accesorios</a></li>
+        <li class="header__nav-item"><a href="../enlaces/finanzamiento.html">Finanzamiento</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+    <section class="hero">
+      <h2>Bienvenido a Premium Quality</h2>
+      <p>Concesionaria líder en autos 0KM, usados seleccionados y accesorios exclusivos.</p>
+    </section>
+
+    <section class="carousel">
+      <h2>Nuestros Autos</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev">&#10094;</button>
+        <div class="carousel-track">
+          <!-- 5 slides de ejemplo; podés cambiarlos por imágenes reales -->
+          <div class="carousel-item">
+            <div class="carousel-image"><img src="img/auto1.png" alt="Auto 1"></div>
+            <div class="carousel-info"><h3>Modelo 1</h3><p>Descripción breve del auto.</p></div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-image"><img src="img/auto2.png" alt="Auto 2"></div>
+            <div class="carousel-info"><h3>Modelo 2</h3><p>Descripción breve del auto.</p></div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-image"><img src="img/auto3.png" alt="Auto 3"></div>
+            <div class="carousel-info"><h3>Modelo 3</h3><p>Descripción breve del auto.</p></div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-image"><img src="img/auto4.png" alt="Auto 4"></div>
+            <div class="carousel-info"><h3>Modelo 4</h3><p>Descripción breve del auto.</p></div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-image"><img src="img/auto8.png" alt="Auto 5"></div>
+            <div class="carousel-info"><h3>Modelo 5</h3><p>Descripción breve del auto.</p></div>
+          </div>
+        </div>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Oportunidades dinámicas: 4 primeros del JSON -->
+    <section class="section1">
+      <div class="titulo"><span>OPORTUNIDADES</span></div>
+      <div class="contenedor-principal">
+        <div class="contenedor_items" id="oportunidades">
+
+          <div class="items">
+                    <div class="card">
+                        <div class="contenedor-img-car">
+                            <img src="../img/auto3.png" alt="Peugeot 307" class="car-image">
+                        </div>
+                        <div class="title">PEUGEOT 307</div>
+                        <div class="description">Hatchback 307 1.6 Xs 110 Mp3</div>
+                        <div class="precio">$9.046.076</div>
+                        <button class="btn ver-mas">VER MÁS</button>
+                    </div>
+                </div>
+
+                <div class="items">
+                    <div class="card">
+                        <img src="../img/auto7.png" alt="fiat Palio" class="car-image">
+                        <div class="title">Fiat Palio</div>
+                        <div class="description">Hatchback 2015 1.6 Essence 115cv</div>
+                        <div class="price">$12.268.046</div>
+                        <button  class="btn ver-mas">VER MÁS</button>
+                    </div>
+                </div>
+
+                <div class="items">
+                    <div class="card">
+                        <img src="../img/auto11.jpg" alt="fiat Palio" class="car-image">
+                        <div class="title">Chevrolet Celta</div>
+                        <div class="description">Hatchback 2012 1.6  105cv</div>
+                        <div class="price">$12.500.346</div>
+                        <button class="btn ver-mas">VER MÁS</button>
+                    </div>
+                </div>
+
+                <div class="items">
+                    <div class="card">
+                        <img src="../img/ecosport.png" alt="Ford EcoSport" class="car-image">
+                        <div class="title">Ford EcoSport</div>
+                        <div class="description">SUV  1.5 Se 123cv 4x2</div>
+                        <div class="price">$23.498.450</div>
+                        <button class="btn ver-mas">VER MÁS</button>
+                    </div>
+                </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="nosotros">
+      <h2 class="nosotros__titulo">Sobre Nosotros</h2>
+      <p class="nosotros__desc">
+        En Premium Quality, somos una concesionaria comprometida con la excelencia, la innovación y la confianza. Desde nuestros inicios, nos propusimos ofrecer 
+        mucho más que vehículos: buscamos brindar una experiencia completa, segura y personalizada para cada cliente que nos elige.
+      </p>
+
+      <div class="nosotros__layout">
+        <!-- Columna izquierda (botones) -->
+        <div class="nosotros__menu">
+          
+        </div>
+
+        <!-- Columna derecha (contenido) -->
+        <div class="nosotros__contenido">
+          <h3>Premium Quality</h3>
+          <div class="logos">
+          </div>
+          <p>
+           Nos especializamos en la venta de automóviles 0km y usados seleccionados, así como en la comercialización de accesorios originales y repuestos certificados. Contamos con un servicio de taller propio, atendido por técnicos calificados, que garantiza el correcto mantenimiento y reparación de cada vehículo que pasa por nuestras manos.</p> <br>
+
+<p>Lo que nos diferencia no es solo la calidad de nuestras unidades, sino el trato humano, la transparencia y el compromiso postventa. Nuestro equipo está formado por profesionales capacitados que acompañan al cliente desde la primera consulta hasta mucho después de realizada la compra.</p> <br>
+
+<p>Además, trabajamos con tecnología y procesos modernos para agilizar cada operación y ofrecer un servicio ágil, ordenado y confiable. Nuestro nuevo sistema de gestión nos permite mejorar la atención, optimizar el control de stock, organizar los servicios del taller y mantener la información siempre actualizada. </p> <br>
+
+<p>Premium Quality no es solo un nombre: es nuestra promesa diaria. Porque sabemos que un auto no es un producto más. Es confianza, movilidad, trabajo, sueños… y por eso cuidamos cada detalle.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="contacto">
+      <div class="contacto-texto">
+        <h2>¿Cómo podemos ayudarte?</h2>
+        <p>
+          Envíanos tu consulta y un asesor se va a contactar con vos para brindarte
+          la asistencia que necesitás.
+        </p>
+      </div>
+
+      <form class="contacto-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="correo">Correo</label>
+            <input type="email" id="correo" name="correo" placeholder="Ingrese su correo" required>
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono">
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." maxlength="1000" required></textarea>
+          <span class="contador">0/1000</span>
+        </div>
+
+        <button type="submit" class="btn-enviar">Enviar</button>
+      </form>
+    </section>
+  </main>
+<footer class="footer">
+  <div class="footer__container">
+    <!-- Columna 1: Logo -->
+    <div class="footer__logo">
+      <img src="img/LogoCon.png" alt="Premium Quality">
+      <p>La evolución de la movilidad.</p>
+    </div>
+
+    <!-- Columna 2: Vehículos -->
+    <div class="footer__col">
+      <h4>Vehículos</h4>
+      <ul>
+        <li><a href="../enlaces/catalago0km.html">0 KM</a></li>
+        <li><a href="../enlaces/catalogoUsados.html">Usados</a></li>
+        <li><a href="../enlaces/catalogoTodos.html">Todos</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Servicios -->
+    <div class="footer__col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="../enlaces/catalogoAccesorios.html">Acessorios</a></li>
+        <li><a href="../enlaces/finanzamiento.html">Financiamiento</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="footer__bottom">
+    <p>© 2025 Premium Quality. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!--  Botón flotante de contacto -->
+<a href="#contacto" class="btn-contacto" title="Ir a Contacto">
+  ✉
+</a>
+
+  <script>
+    // Carrusel simple
+    const track = document.querySelector('.carousel-track');
+    const items = Array.from(track.children);
+    const nextBtn = document.querySelector('.next');
+    const prevBtn = document.querySelector('.prev');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+      const itemWidth = items[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    }
+    nextBtn.addEventListener('click', () => { currentIndex = (currentIndex + 1) % items.length; updateCarousel(); });
+    prevBtn.addEventListener('click', () => { currentIndex = (currentIndex - 1 + items.length) % items.length; updateCarousel(); });
+    setInterval(() => { currentIndex = (currentIndex + 1) % items.length; updateCarousel(); }, 5000);
+
+    // Oportunidades (primeros 4 autos del JSON)
+    fetch("autos.json")
+      .then(r => r.json())
+      .then(data => {
+        const cont = document.getElementById("oportunidades");
+        cont.innerHTML = "";
+        data.slice(0, 4).forEach(auto => {
+          const precio = Number(auto.precio) || 0;
+          cont.innerHTML += `
+            <div class="card">
+              <img src="${auto.img}" alt="${auto.modelo}" class="car-image">
+              <div class="title">${auto.marca} ${auto.modelo}</div>
+              <div class="description">${auto.desc}</div>
+              <div class="precio">$${precio.toLocaleString()}</div>
+              <a href="catalago0km.html" class="btn">VER MÁS</a>
+            </div>`;
+        });
+      })
+      .catch(console.error);
+  </script>
+</body>
+</html>

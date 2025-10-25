@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cargar Accesorio</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__logo-container">
+      <a href="../index.html">
+        <img class="header__logo" src="../img/LogoCon.png" alt="Logo Premium Quality"></a>
+        <a href="../index.html"><h1 class="header__title">Premium Quality</h1></a>
+      
+    </div>
+  </header>
+
+  <main>
+    <section class="contact-section">
+      <h2>Agregar Accesorio</h2>
+      <form class="contact-form" action="guardarAccesorio.php" method="POST" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="form-group">
+            <label for="marca">Marca:</label>
+            <input type="text" id="marca" name="marca" required>
+        </div>
+
+        <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo" required>
+            <option value="Interior">Interior</option>
+            <option value="Exterior">Exterior</option>
+            <option value="Tecnología">Tecnología</option>
+            <option value="Seguridad">Seguridad</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea id="descripcion" name="descripcion" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" name="precio" step="0.01" required>
+        </div>
+
+        <div class="form-group">
+            <label for="imagen">Imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
+        </div>
+
+        <button class="btn" type="submit">Guardar</button>
+        </form>
+
+    </section>
+  </main>
+
+<footer class="footer">
+  <div class="footer__container">
+    <!-- Columna 1: Logo -->
+    <div class="footer__logo">
+      <img src="img/LogoCon.png" alt="Premium Quality">
+      <p>La evolución de la movilidad.</p>
+    </div>
+
+    <!-- Columna 2: Vehículos -->
+    <div class="footer__col">
+      <h4>Vehículos</h4>
+      <ul>
+        <li><a href="../enlaces/catalago0km.html">0 KM</a></li>
+        <li><a href="../enlaces/catalogoUsados.html">Usados</a></li>
+        <li><a href="../enlaces/catalogoTodos.html">Todos</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Servicios -->
+    <div class="footer__col">
+      <h4>Servicios</h4>
+      <ul>
+        <li><a href="../enlaces/catalogoAccesorios.html">Acessorios</a></li>
+        <li><a href="../enlaces/finanzamiento.html">Financiamiento</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <hr>
+
+  <div class="footer__bottom">
+    <p>© 2025 Premium Quality. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<!--  Botón flotante de contacto -->
+<a href="#contacto" class="btn-contacto" title="Ir a Contacto">
+  ✉
+</a>
+</body>
+</html>
