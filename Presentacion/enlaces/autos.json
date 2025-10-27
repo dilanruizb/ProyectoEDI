@@ -82,5 +82,12 @@
         "desc": "test",
         "precio": 323333,
         "img": "img\/auto_68fc6f99dc5cb6.02438882.png"
+    },
+    {
+        "marca": "dsadsa",
+        "modelo": "dasdsa",
+        "desc": "dsadsa",
+        "precio": 322132,
+        "img": "img\/auto_68fee108e8a307.02801615.jpg"
     }
 ]

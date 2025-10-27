@@ -222,5 +222,13 @@
         "precio": 23,
         "img": "img\/accesorios\/419609.png",
         "tipo": "Interior"
+    },
+    {
+        "marca": "dsadsa",
+        "modelo": "dsadsa",
+        "desc": "dsadsa",
+        "precio": 32,
+        "img": "img\/accesorios\/th-1750790814336.BMW-M-COMPETITION-01.jpg",
+        "tipo": "Tecnolog\u00eda"
     }
 ]
